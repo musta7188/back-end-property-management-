@@ -1,3 +1,3 @@
 class Todo < ApplicationRecord
-  belongs_to :propery
+  belongs_to :property
 end
