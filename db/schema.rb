@@ -16,15 +16,13 @@ ActiveRecord::Schema.define(version: 2020_04_10_134918) do
   enable_extension "plpgsql"
 
   create_table "issues", force: :cascade do |t|
-    t.bigint "property_id", null: false
+    t.integer "property_id"
     t.string "message"
     t.integer "priority"
     t.boolean "isCompleted"
-    t.bigint "tenant_id", null: false
+    t.integer "tenant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["property_id"], name: "index_issues_on_property_id"
-    t.index ["tenant_id"], name: "index_issues_on_tenant_id"
   end
 
   create_table "landlords", force: :cascade do |t|
@@ -38,12 +36,11 @@ ActiveRecord::Schema.define(version: 2020_04_10_134918) do
 
   create_table "properties", force: :cascade do |t|
     t.string "address"
-    t.bigint "landlord_id"
+    t.integer "landlord_id"
     t.integer "rooms"
     t.string "blueprint"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["landlord_id"], name: "index_properties_on_landlord_id"
   end
 
   create_table "tenants", force: :cascade do |t|
@@ -52,23 +49,17 @@ ActiveRecord::Schema.define(version: 2020_04_10_134918) do
     t.string "email"
     t.string "password_digest"
     t.date "dob"
-    t.bigint "property_id", null: false
+    t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["property_id"], name: "index_tenants_on_property_id"
   end
 
   create_table "todos", force: :cascade do |t|
     t.string "message"
     t.boolean "isCompleted"
-    t.bigint "property_id", null: false
+    t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["property_id"], name: "index_todos_on_property_id"
   end
 
-  add_foreign_key "issues", "properties"
-  add_foreign_key "issues", "tenants"
-  add_foreign_key "tenants", "properties"
-  add_foreign_key "todos", "properties"
 end

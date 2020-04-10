@@ -194,3 +194,748 @@ FOREIGN KEY ("tenant_id")
   [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
   [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" ORDER BY "landlords"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1 LIMIT $2[0m  [["landlord_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIssues (20200410134918)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mDROP TABLE "issues"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134918"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTodos (20200410134608)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "todos"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134608"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTenants (20200410134305)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "tenants"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134305"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProperties (20200410134015)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134015"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLandlords (20200410133639)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "landlords"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410133639"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLandlords (20200410133639)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "landlords" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410133639"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProperties (20200410134015)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "properties" ("id" bigserial primary key, "address" character varying, "landlord_id" integer, "rooms" integer, "blueprint" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134015"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTenants (20200410134305)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "tenants" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "dob" date, "property_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134305"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTodos (20200410134608)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "message" character varying, "isCompleted" boolean, "property_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134608"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIssues (20200410134918)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "issues" ("id" bigserial primary key, "property_id" integer, "message" character varying, "priority" integer, "isCompleted" boolean, "tenant_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134918"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.6ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:02:50.939755"], ["updated_at", "2020-04-10 15:02:50.939755"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 1], ["rooms", 2], ["created_at", "2020-04-10 15:02:50.958850"], ["updated_at", "2020-04-10 15:02:50.958850"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 1], ["rooms", 5], ["created_at", "2020-04-10 15:02:50.963127"], ["updated_at", "2020-04-10 15:02:50.963127"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 1], ["created_at", "2020-04-10 15:02:50.975361"], ["updated_at", "2020-04-10 15:02:50.975361"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 1], ["created_at", "2020-04-10 15:02:50.979555"], ["updated_at", "2020-04-10 15:02:50.979555"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 2], ["created_at", "2020-04-10 15:02:50.983240"], ["updated_at", "2020-04-10 15:02:50.983240"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 2], ["created_at", "2020-04-10 15:02:50.986518"], ["updated_at", "2020-04-10 15:02:50.986518"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 2], ["created_at", "2020-04-10 15:02:50.990047"], ["updated_at", "2020-04-10 15:02:50.990047"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 2], ["created_at", "2020-04-10 15:02:50.993402"], ["updated_at", "2020-04-10 15:02:50.993402"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" ORDER BY "landlords"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" ORDER BY "landlords"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1 LIMIT $2[0m  [["landlord_id", 1], ["LIMIT", 11]]
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" ORDER BY "landlords"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1 ORDER BY "properties"."id" ASC LIMIT $2[0m  [["landlord_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.5ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:19:32.152778"], ["updated_at", "2020-04-10 15:19:32.152778"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 2], ["rooms", 2], ["created_at", "2020-04-10 15:19:32.169251"], ["updated_at", "2020-04-10 15:19:32.169251"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 2], ["rooms", 5], ["created_at", "2020-04-10 15:19:32.172980"], ["updated_at", "2020-04-10 15:19:32.172980"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 3], ["created_at", "2020-04-10 15:19:32.184927"], ["updated_at", "2020-04-10 15:19:32.184927"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 3], ["created_at", "2020-04-10 15:19:32.188779"], ["updated_at", "2020-04-10 15:19:32.188779"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 4], ["created_at", "2020-04-10 15:19:32.192877"], ["updated_at", "2020-04-10 15:19:32.192877"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 4], ["created_at", "2020-04-10 15:19:32.196303"], ["updated_at", "2020-04-10 15:19:32.196303"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 4], ["created_at", "2020-04-10 15:19:32.199460"], ["updated_at", "2020-04-10 15:19:32.199460"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 4], ["created_at", "2020-04-10 15:19:32.202809"], ["updated_at", "2020-04-10 15:19:32.202809"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.4ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:20:03.040899"], ["updated_at", "2020-04-10 15:20:03.040899"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 3], ["rooms", 2], ["created_at", "2020-04-10 15:20:03.056697"], ["updated_at", "2020-04-10 15:20:03.056697"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 3], ["rooms", 5], ["created_at", "2020-04-10 15:20:03.060746"], ["updated_at", "2020-04-10 15:20:03.060746"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 5], ["created_at", "2020-04-10 15:20:03.073529"], ["updated_at", "2020-04-10 15:20:03.073529"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 5], ["created_at", "2020-04-10 15:20:03.077828"], ["updated_at", "2020-04-10 15:20:03.077828"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 6], ["created_at", "2020-04-10 15:20:03.081332"], ["updated_at", "2020-04-10 15:20:03.081332"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 6], ["created_at", "2020-04-10 15:20:03.084511"], ["updated_at", "2020-04-10 15:20:03.084511"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 6], ["created_at", "2020-04-10 15:20:03.088025"], ["updated_at", "2020-04-10 15:20:03.088025"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 6], ["created_at", "2020-04-10 15:20:03.091480"], ["updated_at", "2020-04-10 15:20:03.091480"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" ORDER BY "issues"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.4ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:20:50.226777"], ["updated_at", "2020-04-10 15:20:50.226777"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 4], ["rooms", 2], ["created_at", "2020-04-10 15:20:50.243006"], ["updated_at", "2020-04-10 15:20:50.243006"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 4], ["rooms", 5], ["created_at", "2020-04-10 15:20:50.246754"], ["updated_at", "2020-04-10 15:20:50.246754"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 7], ["created_at", "2020-04-10 15:20:50.259195"], ["updated_at", "2020-04-10 15:20:50.259195"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 7], ["created_at", "2020-04-10 15:20:50.262820"], ["updated_at", "2020-04-10 15:20:50.262820"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 8], ["created_at", "2020-04-10 15:20:50.266431"], ["updated_at", "2020-04-10 15:20:50.266431"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 8], ["created_at", "2020-04-10 15:20:50.269592"], ["updated_at", "2020-04-10 15:20:50.269592"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 8], ["created_at", "2020-04-10 15:20:50.272887"], ["updated_at", "2020-04-10 15:20:50.272887"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 8], ["created_at", "2020-04-10 15:20:50.276270"], ["updated_at", "2020-04-10 15:20:50.276270"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.3ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:26:18.147861"], ["updated_at", "2020-04-10 15:26:18.147861"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 5], ["rooms", 2], ["created_at", "2020-04-10 15:26:18.163775"], ["updated_at", "2020-04-10 15:26:18.163775"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 5], ["rooms", 5], ["created_at", "2020-04-10 15:26:18.167528"], ["updated_at", "2020-04-10 15:26:18.167528"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 9], ["created_at", "2020-04-10 15:26:18.179957"], ["updated_at", "2020-04-10 15:26:18.179957"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 9], ["created_at", "2020-04-10 15:26:18.184000"], ["updated_at", "2020-04-10 15:26:18.184000"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 10], ["created_at", "2020-04-10 15:26:18.187869"], ["updated_at", "2020-04-10 15:26:18.187869"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 10], ["created_at", "2020-04-10 15:26:18.191491"], ["updated_at", "2020-04-10 15:26:18.191491"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 10], ["created_at", "2020-04-10 15:26:18.194854"], ["updated_at", "2020-04-10 15:26:18.194854"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 10], ["created_at", "2020-04-10 15:26:18.197918"], ["updated_at", "2020-04-10 15:26:18.197918"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.5ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:26:24.512484"], ["updated_at", "2020-04-10 15:26:24.512484"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 6], ["rooms", 2], ["created_at", "2020-04-10 15:26:24.528772"], ["updated_at", "2020-04-10 15:26:24.528772"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 6], ["rooms", 5], ["created_at", "2020-04-10 15:26:24.532741"], ["updated_at", "2020-04-10 15:26:24.532741"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 11], ["created_at", "2020-04-10 15:26:24.545384"], ["updated_at", "2020-04-10 15:26:24.545384"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 11], ["created_at", "2020-04-10 15:26:24.549415"], ["updated_at", "2020-04-10 15:26:24.549415"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 12], ["created_at", "2020-04-10 15:26:24.552944"], ["updated_at", "2020-04-10 15:26:24.552944"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 12], ["created_at", "2020-04-10 15:26:24.556282"], ["updated_at", "2020-04-10 15:26:24.556282"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 12], ["created_at", "2020-04-10 15:26:24.559402"], ["updated_at", "2020-04-10 15:26:24.559402"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 12], ["created_at", "2020-04-10 15:26:24.562626"], ["updated_at", "2020-04-10 15:26:24.562626"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.4ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:26:36.129456"], ["updated_at", "2020-04-10 15:26:36.129456"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 7], ["rooms", 2], ["created_at", "2020-04-10 15:26:36.145996"], ["updated_at", "2020-04-10 15:26:36.145996"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 7], ["rooms", 5], ["created_at", "2020-04-10 15:26:36.149672"], ["updated_at", "2020-04-10 15:26:36.149672"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 13], ["created_at", "2020-04-10 15:26:36.161553"], ["updated_at", "2020-04-10 15:26:36.161553"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 13], ["created_at", "2020-04-10 15:26:36.165340"], ["updated_at", "2020-04-10 15:26:36.165340"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 14], ["created_at", "2020-04-10 15:26:36.168584"], ["updated_at", "2020-04-10 15:26:36.168584"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 14], ["created_at", "2020-04-10 15:26:36.172256"], ["updated_at", "2020-04-10 15:26:36.172256"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 14], ["created_at", "2020-04-10 15:26:36.175917"], ["updated_at", "2020-04-10 15:26:36.175917"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 14], ["created_at", "2020-04-10 15:26:36.179210"], ["updated_at", "2020-04-10 15:26:36.179210"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.4ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:30:13.622472"], ["updated_at", "2020-04-10 15:30:13.622472"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 8], ["rooms", 2], ["created_at", "2020-04-10 15:30:13.638117"], ["updated_at", "2020-04-10 15:30:13.638117"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 8], ["rooms", 5], ["created_at", "2020-04-10 15:30:13.641833"], ["updated_at", "2020-04-10 15:30:13.641833"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 15], ["created_at", "2020-04-10 15:30:13.653954"], ["updated_at", "2020-04-10 15:30:13.653954"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 15], ["created_at", "2020-04-10 15:30:13.657337"], ["updated_at", "2020-04-10 15:30:13.657337"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 16], ["created_at", "2020-04-10 15:30:13.660557"], ["updated_at", "2020-04-10 15:30:13.660557"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 16], ["created_at", "2020-04-10 15:30:13.664076"], ["updated_at", "2020-04-10 15:30:13.664076"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 16], ["created_at", "2020-04-10 15:30:13.667656"], ["updated_at", "2020-04-10 15:30:13.667656"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 16], ["created_at", "2020-04-10 15:30:13.670940"], ["updated_at", "2020-04-10 15:30:13.670940"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTenant Load (0.5ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTenant Load (0.4ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTenant Load (0.6ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."tenant_id" = $1 LIMIT $2[0m  [["tenant_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIssues (20200410134918)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "issues"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134918"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTodos (20200410134608)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "todos"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134608"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTenants (20200410134305)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "tenants"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134305"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProperties (20200410134015)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "properties"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410134015"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLandlords (20200410133639)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "landlords"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200410133639"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLandlords (20200410133639)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "landlords" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410133639"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProperties (20200410134015)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "properties" ("id" bigserial primary key, "address" character varying, "landlord_id" integer, "rooms" integer, "blueprint" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134015"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTenants (20200410134305)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "tenants" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "dob" date, "property_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134305"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTodos (20200410134608)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "message" character varying, "isCompleted" boolean, "property_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134608"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIssues (20200410134918)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "issues" ("id" bigserial primary key, "property_id" integer, "message" character varying, "priority" integer, "isCompleted" boolean, "tenant_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200410134918"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5226537555338902005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Create (0.6ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Luca"], ["last_name", "rossi"], ["email", "luca@email.com"], ["password_digest", "luca1"], ["created_at", "2020-04-10 15:33:27.439223"], ["updated_at", "2020-04-10 15:33:27.439223"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett1"], ["landlord_id", 1], ["rooms", 2], ["created_at", "2020-04-10 15:33:27.455250"], ["updated_at", "2020-04-10 15:33:27.455250"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProperty Create (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("address", "landlord_id", "rooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "strett4"], ["landlord_id", 1], ["rooms", 5], ["created_at", "2020-04-10 15:33:27.459138"], ["updated_at", "2020-04-10 15:33:27.459138"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "J"], ["email", "alex@mail.com"], ["password_digest", "alex1"], ["property_id", 1], ["created_at", "2020-04-10 15:33:27.471298"], ["updated_at", "2020-04-10 15:33:27.471298"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Mustafa"], ["last_name", "M"], ["email", "Mustafa@mail.com"], ["password_digest", "musta1"], ["property_id", 1], ["created_at", "2020-04-10 15:33:27.475759"], ["updated_at", "2020-04-10 15:33:27.475759"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "t1"], ["email", "test1@mail.com"], ["password_digest", "test1"], ["property_id", 2], ["created_at", "2020-04-10 15:33:27.479092"], ["updated_at", "2020-04-10 15:33:27.479092"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "t2"], ["email", "test2@mail.com"], ["password_digest", "test2"], ["property_id", 2], ["created_at", "2020-04-10 15:33:27.482494"], ["updated_at", "2020-04-10 15:33:27.482494"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "t3"], ["email", "test3@mail.com"], ["password_digest", "test3"], ["property_id", 2], ["created_at", "2020-04-10 15:33:27.485796"], ["updated_at", "2020-04-10 15:33:27.485796"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "email", "password_digest", "property_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test4"], ["last_name", "t4"], ["email", "test4@mail.com"], ["password_digest", "test4"], ["property_id", 2], ["created_at", "2020-04-10 15:33:27.488969"], ["updated_at", "2020-04-10 15:33:27.488969"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" LIMIT $1[0m  [["LIMIT", 11]]

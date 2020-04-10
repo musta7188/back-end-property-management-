@@ -6,7 +6,7 @@ class CreateTenants < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :password_digest
       t.date :dob
-      t.references :property, null: false, foreign_key: true
+      t.integer :property_id
 
       t.timestamps
     end

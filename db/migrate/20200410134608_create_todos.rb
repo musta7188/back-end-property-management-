@@ -3,7 +3,7 @@ class CreateTodos < ActiveRecord::Migration[6.0]
     create_table :todos do |t|
       t.string :message
       t.boolean :isCompleted
-      t.references :property, null: false, foreign_key: true
+      t.integer :property_id
 
       t.timestamps
     end
