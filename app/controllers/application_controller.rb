@@ -3,8 +3,10 @@ class ApplicationController < ActionController::Base
   # prevents rails from using its authenticty token bc we are using rails as API we need to prevent  this from happening
   skip_before_action :verify_authenticity_token
 
-  
-  helper_method :login!, :logged_in?, :current_landlord, :authorized_landlord?, :logout!
+  helper_method :login!, :logged_in?, :current_user, :authorized_user?, :logout!
+
+    include ::ActionController::Cookies
+
 
   def login! 
     session[:landlord_id] = @landlord.id
