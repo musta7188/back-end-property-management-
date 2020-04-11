@@ -58,8 +58,10 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    bcrypt (3.1.13)
-    bcrypt (3.1.13-java)
+    bcrypt (3.1.11)
+    bcrypt (3.1.11-java)
+    bcrypt (3.1.11-x64-mingw32)
+    bcrypt (3.1.11-x86-mingw32)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
@@ -235,7 +237,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt (= 3.1.11)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

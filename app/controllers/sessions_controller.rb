@@ -2,10 +2,12 @@ class SessionsController < ApplicationController
 
 def create 
   @landlord = Landlord.find_by(email: session_params[:email])
-
+ debugger
   if @landlord && @landlord.authenticate(session_params[:password])
     login! 
     render json: {logged_in: true, landlord: @landlord}
+
+   
   else
     render json: {
       status: 401,
