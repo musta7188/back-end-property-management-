@@ -3245,3 +3245,40 @@ Processing by SessionsController#create as HTML
 Completed 200 OK in 89ms (Views: 7.8ms | ActiveRecord: 4.6ms | Allocations: 499634)
 
 
+Started POST "/landlords" for ::1 at 2020-04-11 14:54:02 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandlordsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"test3", "last_name"=>"test3", "email"=>"test3@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test3@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Create (0.7ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "test3"], ["last_name", "test3"], ["email", "test3@email.com"], ["password_digest", "$2a$10$WMnsRdHx/LW4kDvuP0wA0OKZlkKhkHIXIEnOYAFW3hxbFx0tzJuzW"], ["created_at", "2020-04-11 13:54:02.585307"], ["updated_at", "2020-04-11 13:54:02.585307"]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+Completed 200 OK in 85ms (Views: 0.7ms | ActiveRecord: 14.3ms | Allocations: 9302)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 14:55:01 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.7ms | Allocations: 2129)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 14:57:58 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (19.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 67ms (Views: 1.1ms | ActiveRecord: 55.8ms | Allocations: 1079)
+
+
+Started POST "/login" for ::1 at 2020-04-11 14:58:21 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"test3", "last_name"=>"test3", "email"=>"test3@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"test3", "last_name"=>"test3", "email"=>"test3@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test3@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 54ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1159)
+
+
