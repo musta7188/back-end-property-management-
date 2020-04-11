@@ -2653,3 +2653,595 @@ SystemExit (exit):
 (byebug):1:in `exit'
 (byebug):1:in `create'
 app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/logged_in" for ::1 at 2020-04-11 12:59:47 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 3.3ms | Allocations: 9235)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:00:12 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 959)
+
+
+Started POST "/login" for ::1 at 2020-04-11 13:00:28 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 148861ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 55439)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:03:08 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 140919ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 290484)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:05:29 +0100
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/logged_in" for ::1 at 2020-04-11 13:05:29 +0100
+Started POST "/login" for ::1 at 2020-04-11 13:05:30 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (3.9ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 48ms (Views: 7.3ms | ActiveRecord: 8.5ms | Allocations: 512851)
+
+
+Processing by SessionsController#create as HTML
+Processing by SessionsController#is_logged_in? as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (4.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+  [1m[36mLandlord Load (10.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 7.9ms | ActiveRecord: 28.2ms | Allocations: 2618726)
+
+
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 18.7ms | Allocations: 1925043)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/logged_in" for ::1 at 2020-04-11 13:06:45 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 43ms (Views: 8.4ms | ActiveRecord: 1.0ms | Allocations: 420985)
+
+
+Started POST "/login" for ::1 at 2020-04-11 13:07:01 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.9ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms | Allocations: 405936)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/logged_in" for ::1 at 2020-04-11 13:08:12 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (12.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 61ms (Views: 7.9ms | ActiveRecord: 12.2ms | Allocations: 418616)
+
+
+Started POST "/login" for ::1 at 2020-04-11 13:08:34 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.8ms | Allocations: 405942)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:08:38 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (2.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.0ms | Allocations: 438596)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:08:39 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (2.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 7.5ms | Allocations: 575860)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:08:49 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (3.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 3.3ms | Allocations: 405939)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:08:52 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (1.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.4ms | Allocations: 428422)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:08:57 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (13.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 13.2ms | Allocations: 900879)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:08:59 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (155.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-04-11 13:09:01 +0100
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 386ms (ActiveRecord: 155.8ms | Allocations: 4375450)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-04-11 13:09:03 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (103.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 645ms (ActiveRecord: 192.3ms | Allocations: 7245859)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"Luca", "last_name"=>"rossi", "email"=>"luca@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (208.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "luca@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 855ms (ActiveRecord: 292.1ms | Allocations: 9247788)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/logged_in" for ::1 at 2020-04-11 13:14:51 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 48ms (Views: 11.5ms | ActiveRecord: 1.6ms | Allocations: 470914)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:15:29 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 30.0ms | ActiveRecord: 0.8ms | Allocations: 534058)
+
+
+Started POST "/landlords" for ::1 at 2020-04-11 13:15:39 +0100
+Processing by LandlordsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"alex", "last_name"=>"j", "email"=>"alex@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[35m (4.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+Completed 200 OK in 168ms (Views: 2.3ms | ActiveRecord: 6.4ms | Allocations: 1512654)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:15:54 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 30.3ms | ActiveRecord: 0.7ms | Allocations: 532231)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:15:56 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (1.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 30.1ms | ActiveRecord: 1.0ms | Allocations: 532960)
+
+
+Started POST "/landlords" for ::1 at 2020-04-11 13:16:20 +0100
+Processing by LandlordsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"alex", "last_name"=>"j", "email"=>"alex@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Create (2.1ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "alex"], ["last_name", "j"], ["email", "alex@email.com"], ["password_digest", "$2a$10$xWWRS0ilO/X/EJTKY3kG4uXP5vvOLfEMYYO6m9mHAW.wJhwRKt6cq"], ["created_at", "2020-04-11 12:16:20.503365"], ["updated_at", "2020-04-11 12:16:20.503365"]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+Completed 200 OK in 154ms (Views: 9.6ms | ActiveRecord: 9.2ms | Allocations: 1352266)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:16:27 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (0.9ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 47ms (Views: 35.6ms | ActiveRecord: 0.9ms | Allocations: 605911)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:19:11 +0100
+Processing by LandlordsController#index as */*
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 45ms (Views: 34.7ms | ActiveRecord: 0.8ms | Allocations: 588978)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:19:19 +0100
+Processing by LandlordsController#index as */*
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 45ms (Views: 34.8ms | ActiveRecord: 0.7ms | Allocations: 588977)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:19:47 +0100
+Processing by LandlordsController#index as */*
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 48ms (Views: 37.2ms | ActiveRecord: 0.8ms | Allocations: 588977)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:20:06 +0100
+Processing by LandlordsController#index as */*
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 32.3ms | ActiveRecord: 0.8ms | Allocations: 588975)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:20:14 +0100
+Processing by LandlordsController#index as */*
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 45ms (Views: 34.0ms | ActiveRecord: 0.7ms | Allocations: 588975)
+
+
+Started GET "/login" for ::1 at 2020-04-11 13:20:49 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2020-04-11 13:21:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2020-04-11 13:22:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/landlord" for ::1 at 2020-04-11 13:22:25 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/landlord"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/logged_in" for ::1 at 2020-04-11 13:23:43 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 66ms (Views: 10.6ms | ActiveRecord: 1.3ms | Allocations: 418626)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:23:54 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (3.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 84ms (Views: 7.9ms | ActiveRecord: 3.5ms | Allocations: 418622)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:24:07 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 60ms (Views: 10.1ms | ActiveRecord: 1.0ms | Allocations: 418624)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:24:14 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 51ms (Views: 15.3ms | ActiveRecord: 1.1ms | Allocations: 418620)
+
+
+Started POST "/landlords" for ::1 at 2020-04-11 13:26:48 +0100
+Processing by LandlordsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"musta", "last_name"=>"abdel", "email"=>"musta@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "musta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Create (0.8ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "musta"], ["last_name", "abdel"], ["email", "musta@gmail.com"], ["password_digest", "$2a$10$ZSXUDEllwYlpop8IaSGNc.dPIY7BIr5FIxuWY3Cn7pBMBiDv3riym"], ["created_at", "2020-04-11 12:26:48.775720"], ["updated_at", "2020-04-11 12:26:48.775720"]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+Completed 200 OK in 152ms (Views: 7.5ms | ActiveRecord: 4.0ms | Allocations: 1325979)
+
+
+Started GET "/landlords" for ::1 at 2020-04-11 13:27:00 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:6:in `index'
+Completed 200 OK in 57ms (Views: 44.4ms | ActiveRecord: 0.7ms | Allocations: 679598)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:30:21 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 38ms (Views: 8.5ms | ActiveRecord: 1.2ms | Allocations: 418624)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:31:47 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.9ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 40ms (Views: 12.0ms | ActiveRecord: 0.9ms | Allocations: 418623)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:32:25 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.9ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 42ms (Views: 5.9ms | ActiveRecord: 0.9ms | Allocations: 418617)
+
+
+Started POST "/landlords" for ::1 at 2020-04-11 13:33:09 +0100
+Processing by LandlordsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"test1", "last_name"=>"test1", "email"=>"test1@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Exists? (4.8ms)[0m  [1m[34mSELECT 1 AS one FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test1@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Create (0.9ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "test1"], ["last_name", "test1"], ["email", "test1@email.com"], ["password_digest", "$2a$10$HY8VmTMDqtwPGf92mlT0MuNnnmHmRKF1q1nTfhlVplmqC0iG5zk4y"], ["created_at", "2020-04-11 12:33:09.575918"], ["updated_at", "2020-04-11 12:33:09.575918"]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+Completed 200 OK in 150ms (Views: 7.5ms | ActiveRecord: 11.6ms | Allocations: 1311180)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:35:30 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 56ms (Views: 10.1ms | ActiveRecord: 1.0ms | Allocations: 418622)
+
+
+Started POST "/landlords" for ::1 at 2020-04-11 13:37:43 +0100
+Processing by LandlordsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"test2", "last_name"=>"test2", "email"=>"test2@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[36mLandlord Create (0.8ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "test2"], ["last_name", "test2"], ["email", "test2@email.com"], ["password_digest", "$2a$10$tY7GKU0Ef7PvPJslup6gkOAoZdxoBW73ZKRRamIrFZAmtTEqQRGgy"], ["created_at", "2020-04-11 12:37:43.162613"], ["updated_at", "2020-04-11 12:37:43.162613"]]
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/landlords_controller.rb:24:in `create'
+Completed 200 OK in 154ms (Views: 3.8ms | ActiveRecord: 3.6ms | Allocations: 1311468)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:38:45 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (12.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 65ms (Views: 15.1ms | ActiveRecord: 12.5ms | Allocations: 418619)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:39:13 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 50ms (Views: 8.5ms | ActiveRecord: 1.2ms | Allocations: 418623)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:39:27 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (5.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 45ms (Views: 11.4ms | ActiveRecord: 5.6ms | Allocations: 418622)
+
+
+Started POST "/login" for ::1 at 2020-04-11 13:39:44 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"test1", "last_name"=>"test1", "email"=>"test1@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"test1", "last_name"=>"test1", "email"=>"test1@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (4.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test1@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 88ms (Views: 8.1ms | ActiveRecord: 4.3ms | Allocations: 501303)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-11 13:41:17 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `current_landlord'
+Completed 200 OK in 47ms (Views: 11.3ms | ActiveRecord: 1.1ms | Allocations: 418621)
+
+
+Started POST "/login" for ::1 at 2020-04-11 13:41:55 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"test1", "last_name"=>"test1", "email"=>"test1@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"first_name"=>"test1", "last_name"=>"test1", "email"=>"test1@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (4.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test1@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 89ms (Views: 7.8ms | ActiveRecord: 4.6ms | Allocations: 499634)
+
+
