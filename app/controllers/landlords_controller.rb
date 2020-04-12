@@ -28,7 +28,6 @@ def create
     render json: {status: 200, landlord: @landlord}
   else
     render json: { status: 500, errors: @landlord.errors.full_messages}
-    
   end
 end
 
