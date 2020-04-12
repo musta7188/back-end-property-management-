@@ -4586,3 +4586,754 @@ Processing by SessionsController#create as HTML
 Completed 200 OK in 141ms (Views: 15.0ms | ActiveRecord: 16.7ms | Allocations: 19671)
 
 
+Started GET "/" for ::1 at 2020-04-12 11:49:57 +0100
+Started GET "/" for ::1 at 2020-04-12 11:49:58 +0100
+  [1m[35m (29.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  [1m[35m (108.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jamarco/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /home/jamarco/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jamarco/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 44.1ms | Allocations: 323)
+  Rendered /home/jamarco/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 29.9ms | Allocations: 226)
+Completed 200 OK in 140ms (Views: 76.9ms | ActiveRecord: 0.0ms | Allocations: 1705)
+
+
+Completed 200 OK in 162ms (Views: 47.1ms | ActiveRecord: 0.0ms | Allocations: 3116)
+
+
+Started GET "/landlords" for ::1 at 2020-04-12 11:50:04 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (70.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:8:in `index'
+Completed 200 OK in 302ms (Views: 21.0ms | ActiveRecord: 88.2ms | Allocations: 9229)
+
+
+Started GET "/landlords/2" for ::1 at 2020-04-12 11:50:09 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLandlord Load (1.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (2.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 286ms (Views: 244.9ms | ActiveRecord: 10.5ms | Allocations: 11712)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:06:21 +0100
+Processing by SessionsController#is_logged_in? as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 191)
+
+
+Started POST "/login" for ::1 at 2020-04-12 12:06:34 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 94ms (Views: 5.2ms | ActiveRecord: 1.6ms | Allocations: 2274)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:07:17 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 950)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:07:22 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 940)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:07:30 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 952)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 12:07:49 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/login" for ::1 at 2020-04-12 12:08:23 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 118ms (Views: 2.3ms | ActiveRecord: 1.0ms | Allocations: 2135)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:08:26 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 941)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:08:30 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 954)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:08:37 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 941)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:48:44 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 1025)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 12:48:47 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 270)
+
+
+Started POST "/login" for ::1 at 2020-04-12 12:48:58 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 76ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 2156)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:50:29 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 945)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:54:06 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 947)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 12:59:52 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 941)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 12:59:53 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 13:00:12 +0100
+Processing by SessionsController#is_logged_in? as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 273)
+
+
+Started POST "/login" for ::1 at 2020-04-12 13:00:18 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (1.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 115ms (Views: 2.2ms | ActiveRecord: 1.7ms | Allocations: 2137)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 13:02:52 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 944)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 13:03:58 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (5.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 5.1ms | Allocations: 940)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 13:04:14 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 937)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 13:04:30 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 936)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 13:04:35 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 269)
+
+
+Started POST "/login" for ::1 at 2020-04-12 13:05:01 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 93ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 2140)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 13:05:05 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 267)
+
+
+Started POST "/login" for ::1 at 2020-04-12 13:05:18 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (2.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 133ms (Views: 2.2ms | ActiveRecord: 2.5ms | Allocations: 2144)
+
+
+Started GET "/landlords/2" for ::1 at 2020-04-12 13:40:02 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (1.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 15ms (Views: 6.3ms | ActiveRecord: 3.7ms | Allocations: 2051)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 13:40:08 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 937)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 13:40:24 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 274)
+
+
+Started POST "/login" for ::1 at 2020-04-12 13:40:32 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 98ms (Views: 4.8ms | ActiveRecord: 1.1ms | Allocations: 2150)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:01:58 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (3.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 3.6ms | Allocations: 1020)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:13:59 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 1022)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:14:17 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 942)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:17:27 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 942)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:18:27 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 33ms (Views: 1.7ms | ActiveRecord: 1.6ms | Allocations: 945)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:18:38 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 946)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:19:06 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (2.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.3ms | Allocations: 942)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:19:49 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (2.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 2.8ms | Allocations: 941)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:20:09 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 937)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 14:22:51 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 936)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:16:28 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1021)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:17:46 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 939)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:22:43 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 939)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:25:01 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 938)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:37:46 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 1023)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:38:30 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 938)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:43:18 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 939)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 15:43:27 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 943)
+
+
+Started GET "/landlords/2" for ::1 at 2020-04-12 15:52:38 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (2.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 14ms (Views: 6.9ms | ActiveRecord: 3.1ms | Allocations: 2051)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:21:06 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 2.1ms | Allocations: 1031)
+
+
+Started GET "/" for ::1 at 2020-04-12 19:21:09 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jamarco/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jamarco/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.7ms | Allocations: 196)
+Completed 200 OK in 55ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 895)
+
+
+Started GET "/landlords" for ::1 at 2020-04-12 19:21:16 +0100
+Processing by LandlordsController#index as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords"[0m
+  ↳ app/controllers/landlords_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 1468)
+
+
+Started GET "/landlords/1" for ::1 at 2020-04-12 19:21:20 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 2088)
+
+
+Started GET "/landlords/2" for ::1 at 2020-04-12 19:21:21 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 1.0ms | Allocations: 1950)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:21:38 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 939)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:23:58 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 939)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:24:11 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 938)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:24:26 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 943)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:25:19 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 938)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:25:32 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 936)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:25:50 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 942)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:26:23 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 945)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:26:46 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 946)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:27:26 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 938)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:27:55 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 940)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:29:01 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 945)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:29:45 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 943)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:32:12 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 1.1ms | Allocations: 944)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:33:31 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.3ms | Allocations: 942)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:34:07 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 945)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:34:40 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 942)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:35:02 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 944)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:41:14 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.9ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 2.3ms | Allocations: 1026)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 19:42:11 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/login" for ::1 at 2020-04-12 19:42:18 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (8.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 159ms (Views: 3.0ms | ActiveRecord: 9.0ms | Allocations: 2156)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:42:45 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 938)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 19:43:43 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started POST "/login" for ::1 at 2020-04-12 19:44:00 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 87ms (Views: 2.6ms | ActiveRecord: 0.9ms | Allocations: 2141)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:44:19 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 943)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:45:45 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.0ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 941)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-12 19:46:30 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 266)
+
+
+Started POST "/login" for ::1 at 2020-04-12 19:46:37 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 93ms (Views: 4.7ms | ActiveRecord: 0.8ms | Allocations: 2138)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:47:01 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 939)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:50:39 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 150ms (Views: 79.5ms | ActiveRecord: 16.0ms | Allocations: 19734)
+
+
+Started POST "/login" for ::1 at 2020-04-12 19:50:44 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"alex@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 83ms (Views: 2.2ms | ActiveRecord: 0.6ms | Allocations: 2273)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 19:51:03 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 0.9ms | Allocations: 2027)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:21:16 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.7ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (1.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 2.6ms | Allocations: 2121)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:22:51 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (1.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 2.2ms | Allocations: 2014)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:24:02 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 2007)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:25:58 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 2.2ms | Allocations: 2011)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:26:14 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (1.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 2.5ms | Allocations: 2016)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:26:52 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 2010)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:27:45 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.8ms | Allocations: 2032)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:29:01 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (1.9ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 2.2ms | Allocations: 2009)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-12 20:30:22 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.6ms | Allocations: 2014)
+
+

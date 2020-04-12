@@ -26,7 +26,7 @@ def is_logged_in?
     render json: {
       logged_in: true,
       landlord: current_landlord
-    }
+    }, include: :properties
   else
     render json: {
       logged_in: false,
