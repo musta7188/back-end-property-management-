@@ -1,11 +1,17 @@
 class PropertiesController < ApplicationController
     def create 
-        @landlord = Landlord.new(landlord_params)
-        if @landlord.save
-          login!
-          render json: {status: 200, landlord: @landlord}
+        @property = Property.new(property_params)
+        if @property.save
+          
+          render json: {status: 200, property: @property}
         else
-          render json: { status: 500, errors: @landlord.errors.full_messages}
+          render json: { status: 500, errors: @property.errors.full_messages}
         end
-      end
+    end
+
+    private
+
+    def property_params
+    params.require(:property).permit(:landlord_id, :address, :rooms)
+    end
 end
