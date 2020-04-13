@@ -13,4 +13,16 @@ validates :email, presence: true
 validates :email, uniqueness: true
 validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
+def all_tenants
+  self.properties.map{|p|p.tenants}
+end
+
+def all_issues
+  self.properties.map{|p|p.issues}
+end
+
+def all_todos
+  self.properties.map{|p|p.todos}
+end
+
 end
