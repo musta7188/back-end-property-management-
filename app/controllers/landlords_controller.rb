@@ -15,7 +15,9 @@ end
 def show 
   @landlord = Landlord.find(params[:id])
   if @landlord 
-    render json: @landlord, include: :properties
+    render json: {landlord: @landlord, issues: @landlord.all_issues, tenants: @landlord.all_tenants, todos: @landlord.all_todos, properties: @landlord.properties} 
+
+
   else
     render json: {status: 500, errors: ['user not found']}
   end
