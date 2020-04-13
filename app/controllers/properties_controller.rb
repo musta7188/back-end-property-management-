@@ -9,6 +9,15 @@ class PropertiesController < ApplicationController
         end
     end
 
+    def index 
+        @properties = Property.all 
+        if @properties
+          render json: {properties: @properties}
+        else 
+          render json: {status: 500, errors: ['no properties found']}
+      end
+    end
+
     private
 
     def property_params
