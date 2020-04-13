@@ -7663,3 +7663,657 @@ Processing by SessionsController#is_logged_in? as HTML
 Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 1.4ms | Allocations: 10273)
 
 
+Started POST "/login" for ::1 at 2020-04-13 14:44:15 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"test2@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"test2@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 111ms (Views: 22.1ms | ActiveRecord: 12.1ms | Allocations: 47417)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 14:44:21 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.6ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.4ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (2.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 27ms (Views: 14.7ms | ActiveRecord: 4.3ms | Allocations: 10531)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 14:44:29 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.7ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.4ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.4ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 3.2ms | Allocations: 10293)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 14:46:34 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mIssue Load (0.7ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.3ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.3ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 2.3ms | Allocations: 10291)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-13 14:46:39 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 14:47:06 +0100
+Processing by SessionsController#is_logged_in? as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 276)
+
+
+Started POST "/login" for ::1 at 2020-04-13 14:47:13 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"test2@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"test2@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 61ms (Views: 8.1ms | ActiveRecord: 1.4ms | Allocations: 10377)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 14:47:16 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.9ms | Allocations: 10273)
+
+
+Started GET "/landlords/2" for ::1 at 2020-04-13 15:43:32 +0100
+Processing by LandlordsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.7ms | Allocations: 1765)
+
+
+Started GET "/landlords/2" for ::1 at 2020-04-13 15:43:36 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 2]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1645)
+
+
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:43:43 +0100
+Processing by LandlordsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.4ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mIssue Load (0.5ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.3ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 31ms (Views: 25.7ms | ActiveRecord: 2.8ms | Allocations: 10296)
+
+
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:44:00 +0100
+Processing by LandlordsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.4ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.3ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (1.7ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 24ms (Views: 15.2ms | ActiveRecord: 3.9ms | Allocations: 10258)
+
+
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:44:23 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (1.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.5ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (1.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 39ms (Views: 30.4ms | ActiveRecord: 5.0ms | Allocations: 10256)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 15:47:34 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.3ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 92ms (Views: 30.8ms | ActiveRecord: 19.5ms | Allocations: 43517)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 15:48:07 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (2.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (28.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.8ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 49ms (Views: 13.4ms | ActiveRecord: 32.3ms | Allocations: 10275)
+
+
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:48:44 +0100
+  
+SyntaxError (/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+...n: {landlord: @landlord include:{ issue: @landlord.all_issue...
+...                        ^~~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+...perties: @landlord.properties}} 
+...                              ^):
+  
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:49:14 +0100
+  
+SyntaxError (/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+    render json: landlord: @landlord, include: {issue: ...
+                 ^~~~~~~~~):
+  
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:49:27 +0100
+  
+SyntaxError (/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+...n: {landlord: @landlord include: issue: @landlord.all_issues...
+...                        ^~~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+... @landlord.all_issues, tenants: @landlord.all_tenants, todos...
+...                       ^~~~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+...: @landlord.all_tenants, todos: @landlord.all_todos, propert...
+...                         ^~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+...landlord.all_todos, properties: @landlord.properties} 
+...                    ^~~~~~~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+...operties: @landlord.properties} 
+...                              ^):
+  
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected '}', expecting end
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:49:35 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 68ms (Views: 25.9ms | ActiveRecord: 14.0ms | Allocations: 43522)
+
+
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:50:56 +0100
+  
+SyntaxError (/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+...rd: @landlord}, include: issue: @landlord.all_issues, tenant...
+...                         ^~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+... @landlord.all_issues, tenants: @landlord.all_tenants, todos...
+...                       ^~~~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+...: @landlord.all_tenants, todos: @landlord.all_todos, propert...
+...                         ^~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+...landlord.all_todos, properties: @landlord.properties} 
+...                    ^~~~~~~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tSTRING_DEND, expecting end
+...operties: @landlord.properties} 
+...                              ^
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:20: syntax error, unexpected tSTRING_DEND, expecting '}'
+...00, errors: ['user not found']}
+...                              ^
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:28: syntax error, unexpected tSTRING_DEND, expecting '}'
+...atus: 200, landlord: @landlord}
+...                              ^
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:30: syntax error, unexpected tSTRING_DEND, expecting '}'
+...@landlord.errors.full_messages}
+...                              ^
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:41: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tSTRING_DEND, expecting end
+app/controllers/landlords_controller.rb:20: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:28: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:30: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tSTRING_DEND, expecting end
+app/controllers/landlords_controller.rb:20: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:28: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:30: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tSTRING_DEND, expecting end
+app/controllers/landlords_controller.rb:20: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:28: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:30: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/landlords_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:51:14 +0100
+  
+SyntaxError (/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+...rd: @landlord}, include: issue: @landlord.all_issues, tenant...
+...                         ^~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+... @landlord.all_issues, tenants: @landlord.all_tenants, todos...
+...                       ^~~~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+...: @landlord.all_tenants, todos: @landlord.all_todos, propert...
+...                         ^~~~~~
+/Users/musta88/Development/code/Module4/property-managment/back-end-property-management-/app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+...landlord.all_todos, properties: @landlord.properties
+...                    ^~~~~~~~~~~):
+  
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+app/controllers/landlords_controller.rb:18: syntax error, unexpected tLABEL, expecting '='
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:51:24 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 4.4ms | Allocations: 22052)
+
+
+  
+NoMethodError (undefined method `issue' for #<Landlord:0x00007fa4acc68420>
+Did you mean?  issues
+               issues=):
+  
+app/controllers/landlords_controller.rb:18:in `show'
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:51:38 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mLandlord Load (0.1ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" INNER JOIN "properties" ON "issues"."property_id" = "properties"."id" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 6.9ms | Allocations: 27673)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/landlords_controller.rb:18:in `show'
+Started GET "/landlords/6" for ::1 at 2020-04-13 15:52:01 +0100
+Processing by LandlordsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:16:in `show'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/landlords_controller.rb:18:in `show'
+Completed 200 OK in 64ms (Views: 24.6ms | ActiveRecord: 14.0ms | Allocations: 43365)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-13 15:52:25 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 274)
+
+
+Started POST "/login" for ::1 at 2020-04-13 15:52:32 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"test2@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"test2@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 200 OK in 68ms (Views: 8.1ms | ActiveRecord: 1.5ms | Allocations: 10489)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 15:52:36 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 6]]
+  ↳ app/models/landlord.rb:21:in `map'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mIssue Load (0.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."property_id" = $1[0m  [["property_id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `is_logged_in?'
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 1.3ms | Allocations: 10273)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-13 16:01:10 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started POST "/login" for ::1 at 2020-04-13 16:01:18 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"landlord"=>{"email"=>"test1@email.com", "password"=>"[FILTERED]"}, "session"=>{"landlord"=>{"email"=>"test1@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mLandlord Load (1.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test1@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 5]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 83ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 1872)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:01:25 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 5]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1665)
+
+
+Started DELETE "/logout" for ::1 at 2020-04-13 16:03:14 +0100
+Processing by SessionsController#destroy as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/landlords" for ::1 at 2020-04-13 16:03:42 +0100
+Processing by LandlordsController#create as HTML
+  Parameters: {"landlord"=>{"first_name"=>"test5", "last_name"=>"test5", "email"=>"test5@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/landlords_controller.rb:28:in `create'
+  [1m[36mLandlord Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "landlords" WHERE "landlords"."email" = $1 LIMIT $2[0m  [["email", "test5@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landlords_controller.rb:28:in `create'
+  [1m[36mLandlord Create (5.2ms)[0m  [1m[32mINSERT INTO "landlords" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "test5"], ["last_name", "test5"], ["email", "test5@email.com"], ["password_digest", "$2a$10$2biAfZp5E5MPnVaUx/ic5OT..0DlkXpxOWcQBqgKccUoKFrAoN3aq"], ["created_at", "2020-04-13 15:03:42.124964"], ["updated_at", "2020-04-13 15:03:42.124964"]]
+  ↳ app/controllers/landlords_controller.rb:28:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/landlords_controller.rb:28:in `create'
+Completed 200 OK in 92ms (Views: 0.4ms | ActiveRecord: 9.2ms | Allocations: 4280)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:04:07 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 0.6ms | Allocations: 1670)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:04:14 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1660)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:04:18 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.5ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 1661)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:05:18 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1661)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:05:20 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.8ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 1659)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:06:56 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1665)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:19:19 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.4ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 1771)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:19:44 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.3ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1669)
+
+
+Started GET "/logged_in" for ::1 at 2020-04-13 16:22:18 +0100
+Processing by SessionsController#is_logged_in? as HTML
+  [1m[36mLandlord Load (0.2ms)[0m  [1m[34mSELECT "landlords".* FROM "landlords" WHERE "landlords"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_landlord'
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."landlord_id" = $1[0m  [["landlord_id", 13]]
+  ↳ app/models/landlord.rb:21:in `map'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1660)
+
+
