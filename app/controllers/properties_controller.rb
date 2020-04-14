@@ -18,6 +18,17 @@ class PropertiesController < ApplicationController
       end
     end
 
+    def show
+      property = Property.find(params[:id])
+      render json: {data:property},status: :ok
+    end
+
+    def destroy
+      @property = Property.find(params[:id])
+      @property.destroy
+      render json: {status: 'SUCCESS', message:'Deleted property', data:@property},status: :ok
+    end
+
     private
 
     def property_params
