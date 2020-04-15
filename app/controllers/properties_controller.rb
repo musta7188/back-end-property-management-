@@ -20,7 +20,11 @@ class PropertiesController < ApplicationController
 
     def show
       property = Property.find(params[:id])
-      render json: {data:property},status: :ok
+      render json: {
+        property:property, 
+        tenants: property.tenants,
+        issues: property.issues,
+        todos: property.todos},status: :ok
     end
 
     def destroy
