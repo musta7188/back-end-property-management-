@@ -6,7 +6,7 @@ def create
   if @landlord && @landlord.authenticate(session_params[:password])
    
     login! 
-   render json: {logged_in: true, landlord: @landlord, issues: @landlord.all_issues, tenants: @landlord.all_tenants, todos: @landlord.all_todos, properties: @landlord.properties} 
+   render json: {logged_in: true, landlord: @landlord, issues: @landlord.issues, tenants: @landlord.tenants, todos: @landlord.todos, properties: @landlord.properties} 
 
 
    
@@ -26,9 +26,9 @@ def is_logged_in?
     render json: {
       logged_in: true,
       landlord: current_landlord, 
-      issues: current_landlord.all_issues, 
-      tenants: current_landlord.all_tenants, 
-      todos: current_landlord.all_todos, 
+      issues: current_landlord.issues, 
+      tenants: current_landlord.tenants, 
+      todos: current_landlord.todos, 
       properties: current_landlord.properties
     }
   else

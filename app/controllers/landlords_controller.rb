@@ -15,7 +15,7 @@ end
 def show 
   @landlord = Landlord.find(params[:id])
   if @landlord 
-    render json: {landlord: @landlord, issues: @landlord.all_issues, tenants: @landlord.all_tenants, todos: @landlord.all_todos, properties: @landlord.properties} 
+    render json: {landlord: @landlord, issues: @landlord.issues, tenants: @landlord.tenants, todos: @landlord.todos, properties: @landlord.properties} 
 
 
   else
