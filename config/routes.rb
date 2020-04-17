@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources  :landlords
   resources :properties
+  resources :tenants
 end

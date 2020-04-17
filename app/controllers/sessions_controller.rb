@@ -6,10 +6,9 @@ def create
   if @landlord && @landlord.authenticate(session_params[:password])
    
     login! 
-   render json: {logged_in: true, landlord: @landlord, issues: @landlord.issues, tenants: @landlord.tenants, todos: @landlord.todos, properties: @landlord.properties} 
+   render json: {logged_in: true, landlord: @landlord, issues: @landlord.issues, tenants: @landlord.tenants, todos: @landlord.todos, properties: @landlord.properties}, include: {tenants: :properties}
 
 
-   
   else
     render json: {
       status: 401,
