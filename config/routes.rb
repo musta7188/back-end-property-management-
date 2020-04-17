@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources  :landlords
   resources :properties
   resources :issues
+  resources :todos
 end
