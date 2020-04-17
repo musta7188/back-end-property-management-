@@ -6,5 +6,10 @@ Rails.application.routes.draw do
 
   resources  :landlords
   resources :properties
+<<<<<<< HEAD
   resources :tenants
+=======
+  resources :issues
+  resources :todos
+>>>>>>> issue_controller
 end
